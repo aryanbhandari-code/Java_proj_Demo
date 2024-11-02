@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>New User Registration</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css">
+    <style>
+        /* Color Palette */
+        :root {
+            --light-green: #ECF4D6;
+            --aqua-green: #9AD0C2;
+            --dark-teal: #2D9596;
+            --deep-blue: #265073;
+        }
+
+        /* Body Styling */
+        body {
+            background-color: var(--light-green);
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        /* Form Container */
+        .new {
+            width: 100%;
+            max-width: 600px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header Styling */
+        .ui.dividing.header {
+            color: var(--deep-blue);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Input and Dropdown Fields */
+        .ui.form .field label {
+            color: var(--deep-blue);
+            font-weight: bold;
+            text-align: left;
+        }
+
+        .ui.form input[type="text"],
+        .ui.form input[type="number"],
+        .ui.form select {
+            background-color: var(--aqua-green);
+            border: 1px solid var(--dark-teal);
+            border-radius: 4px;
+            padding: 10px;
+            color: #333;
+            width: 100%;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        /* Dropdown Styling */
+        .ui.form .ui.dropdown {
+            background-color: var(--aqua-green);
+            border: 1px solid var(--dark-teal);
+            color: #333;
+        }
+
+        /* Submit Button Styling */
+        .ui.green.button {
+            background-color: var(--deep-blue) !important;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-align: center;
+        }
+
+        .ui.green.button:hover {
+            background-color: var(--dark-teal) !important;
+        }
+
+        /* Center the Button */
+        .ui.green.button.centered {
+            display: block;
+            margin: 20px auto 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- New User Registration Form -->
+    <div class="new">
+        <form class="ui form" method="post" action="success.jsp">
+            <h3 class="ui dividing header">Fill in Information</h3>
+
+            <div class="two fields">
+                <div class="field">
+                    <label>Name</label>
+                    <input type="text" name="name" placeholder="Enter your name">
+                </div>
+                <div class="field">
+                    <label>Password</label>
+                    <input type="text" name="pwd" placeholder="Enter a password">
+                </div>
+            </div>
+
+            <div class="two fields">
+                <div class="field">
+                    <label>Contact Number</label>
+                    <input type="number" name="pno" placeholder="Phone number">
+                </div>
+                <div class="field">
+                    <label>Email ID</label>
+                    <input type="text" name="pemail" placeholder="Email ID">
+                </div>
+            </div>
+
+            <div class="three fields">
+                <div class="field">
+                    <label>Street Address</label>
+                    <input type="text" name="street" placeholder="Street Address">
+                </div>
+                <div class="field">
+                    <label>Locality/Area</label>
+                    <input type="text" name="area" placeholder="Area">
+                </div>
+                <div class="field">
+                    <label>Aadhar Number</label>
+                    <input type="number" name="aadhar" placeholder="Aadhar number">
+                </div>
+            </div>
+
+            <div class="two fields">
+                <div class="field">
+                    <label>State</label>
+                    <select class="ui fluid dropdown" name="state">
+                        <option value="">State</option>
+                        <option value="AP">Andhra Pradesh</option>
+                        <option value="Arunachal">Arunachal Pradesh</option>
+                        <option value="Assam">Assam</option>
+                        <option value="KA">Karnataka</option>
+                        <option value="TN">Tamil Nadu</option>
+                        <option value="MH">Maharashtra</option>
+                        <!-- Add more options as needed -->
+                    </select>
+                </div>
+                <div class="field">
+                    <label>Country</label>
+                    <select class="ui fluid dropdown" name="country">
+                        <option value="">Country</option>
+                        <option value="India">India</option>
+                        <option value="Bangladesh">Bangladesh</option>
+                        <option value="Pakistan">Pakistan</option>
+                        <option value="Sri Lanka">Sri Lanka</option>
+                    </select>
+                </div>
+            </div>
+
+            <button type="submit" class="ui green button centered">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
