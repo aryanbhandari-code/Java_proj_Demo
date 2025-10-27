@@ -20,7 +20,7 @@ pipeline {
         stage('Run') {
     steps {
         echo 'Running the application...'
-        bat 'java -cp out com.hospdbms.pkg.Admlogin'
+        bat 'java -cp out com.hospdbms.pkg.Admnlogin'
           }
          }
 
