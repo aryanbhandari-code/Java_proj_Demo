@@ -21,12 +21,11 @@ pipeline {
             }
         }
 
-        stage('Run') {
-            steps {
-                echo 'Running the application...'
-                bat 'java -cp out com.hospdbms.pkg.Admnlogin'
-            }
-        }
+       stage('Run') {
+    steps {
+        echo 'Skipping direct run (Servlet requires container like Tomcat)'
+    }
+}
 
         stage('Dockerize') {
             steps {
