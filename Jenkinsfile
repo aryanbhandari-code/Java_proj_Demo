@@ -12,7 +12,8 @@ pipeline {
             steps {
                 echo 'Building the project...'
                 bat 'javac -version'
-                bat 'javac -d out src/**/*.java'
+                bat 'javac -d out HospDBMS1/src/com/hospdbms/pkg/*.java'
+
             }
         }
 
