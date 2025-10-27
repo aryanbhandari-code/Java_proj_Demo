@@ -1,0 +1,34 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Clone Repository') {
+            steps {
+                git branch: 'main', url: 'https://github.com/aryanbhandari-code/Java_proj_Demo.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo 'Building the project...'
+                bat 'javac -version'
+                bat 'javac -d out src/**/*.java'
+            }
+        }
+
+        stage('Run') {
+            steps {
+                echo 'Running the application...'
+                bat 'java -cp out Main'
+            }
+        }
+
+        stage('Dockerize') {
+            steps {
+                echo 'Building Docker image...'
+                bat 'docker build -t java-demo-app .'
+                bat 'docker run -d -p 8080:8080 java-demo-app'
+            }
+        }
+    }
+}
