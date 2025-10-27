@@ -12,7 +12,7 @@ pipeline {
             steps {
                 echo 'Building the project...'
                 bat 'javac -version'
-                bat 'javac -d out HospDBMS1/src/com/hospdbms/pkg/*.java'
+                bat 'javac -cp HospDBMS1/lib/javax.servlet-api-4.0.1.jar -d out HospDBMS1/src/com/hospdbms/pkg/*.java'
 
             }
         }
