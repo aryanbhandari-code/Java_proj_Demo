@@ -13,16 +13,17 @@ pipeline {
         echo 'Building the project...'
         bat 'javac -version'
         bat 'javac -cp HospDBMS1/lib/javax.servlet-api-4.0.1.jar -d out HospDBMS1/src/com/hospdbms/pkg/*.java'
-    }
-}
+          }
+         }
 
 
         stage('Run') {
-            steps {
-                echo 'Running the application...'
-                bat 'java -cp out Main'
-            }
-        }
+    steps {
+        echo 'Running the application...'
+        bat 'java -cp out com.hospdbms.pkg.Admlogin'
+          }
+         }
+
 
         stage('Dockerize') {
             steps {
